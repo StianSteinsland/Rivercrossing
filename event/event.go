@@ -64,15 +64,15 @@ func TakeOut() (string, string) {
 // krysse elven CrossRiver() (sjekker at gjenværende item kan være i lag uten at en blir spist)
 // ta ut item og plasser på østsida
 // dra tilbake, CrossRiver()
-// nytt item i båt PutInBoat()
+// Nytt item i båt PutInBoat()
 // CrossRiver()
-// ta ut item plasser på land (kan gjenværende item være i lag?)
-// tar med en tilbake fordi matkjede er rev->kylling->korn og kylling kan ikke være med en av de andre
-// tar ut item på vestsida, legger in item som var på vestsida
+// Ta ut item plasser på land (kan gjenværende item være i lag?)
+// Tar med en tilbake fordi matkjede er rev->kylling->korn og kylling kan ikke være med en av de andre
+// Tar ut item på vestsida, legger in item som var på vestsida
 // CrossRiver()
-//Ta ut item
+// Ta ut item
 // CrossRiver()
 // Legger inn item som var tatt med tilbake (kylling)
 // CrossRiver()
-// tar ut item, alt komm over ingen ble spist
+// tar ut item, alt kom over ingen ble spist
 // Konditsjons, båt kan maks ha 2: hs(sjofør) og 1 item, rev og kylling kan ikke være sammen, kylling og korn kan ikke være sammen
