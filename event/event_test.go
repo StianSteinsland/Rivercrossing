@@ -1,15 +1,45 @@
-// Package for testing events in the riverworld
-// Possible events: put(item), getin(), getout(), crossriver(), takeout(item)
-// start() or setup(), reset() osv.
+// put(item), getin(), getout(), crossriver(), takeout(item)
+//Start() or setup(), reset() osv.
+
 package event
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
-func TestPut(t *testing.T) {
-    // Hva forventer jeg?
-    wanted := "[kylling rev korn ---\\ \\_korn_/ _________________/---]"
-    got := Put("korn") // Hva fikk jeg?
-    if got != wanted {
-             t.Errorf("Feil, fikk %q, ønsket %q.", got, wanted)
-    }
+func TestPutInBoat(t *testing.T) {
+	wanted := "kylling"
+	PutInBoat("kylling")
+	got := boat[1]
+	if got != wanted {
+		t.Errorf("feil, fikk %q, ønsket %q.", got, wanted)
+	}
+}
+
+func TestTakeOut(t *testing.T) {
+	wanted := "kylling "
+	TakeOut()
+	got := ost[1]
+	fmt.Println(boat[1])
+	if got != wanted {
+		t.Errorf("feil, fikk %q, ønsket %q.", got, wanted)
+	}
+}
+
+func TestViewState(t *testing.T) {
+	wanted := "rev korn --v_____\\_hs__//ø-- kylling  "
+	InitialState()
+	PutInBoat("kylling")
+	CrossRiver(0)
+	ViewState()
+	CrossRiver(1)
+	ViewState()
+	TakeOut()
+	CrossRiver(1)
+	ViewState()
+	got := state
+	if got != wanted {
+		t.Errorf("feil, fikk %q, ønsket %q.", got, wanted)
+	}
 }
